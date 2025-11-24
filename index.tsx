@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+// 尝试获取已有 root，没有就自己创建一个
+const rootElement =
+  document.getElementById('root') ||
+  (() => {
+    const el = document.createElement('div');
+    el.id = 'root';
+    document.body.appendChild(el);
+    return el;
+  })();
 
 const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <App />
