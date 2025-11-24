@@ -2,16 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-// 尝试获取已有 root，没有就自己创建一个
-const rootElement =
-  document.getElementById('root') ||
-  (() => {
-    const el = document.createElement('div');
-    el.id = 'root';
-    document.body.appendChild(el);
-    return el;
-  })();
+// Find the root element on the page (required for GitHub Pages deployment)
+const rootElement = document.getElementById('root');
 
+if (!rootElement) {
+  throw new Error('Root element #root not found');
+}
+
+// Correct React 18 initialization
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
