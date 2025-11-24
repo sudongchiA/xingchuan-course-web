@@ -2,16 +2,18 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <title>星川课程网页</title>
+    <title>星川课程网站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 如果你想继续用 Tailwind CDN，就保留这行；不想用可以删掉 -->
+
+    <!-- Tailwind CDN（可选） -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+
   <body>
-    <!-- React 挂载点，id 必须是 root，和 index.tsx 里对应 -->
+    <!-- React 将挂载在这里 -->
     <div id="root"></div>
 
-    <!-- ⚠️ 关键入口：告诉 Vite 从 src/index.tsx 开始打包 React 应用 -->
-    <script type="module" src="/src/index.tsx"></script>
+    <!-- 正确入口路径（相对路径，适配 GitHub Pages） -->
+    <script type="module" src="./src/index.tsx"></script>
   </body>
 </html>
